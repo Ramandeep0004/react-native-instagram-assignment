@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "917962287650",
+    "project_id": "instagramassignmnet",
+    "storage_bucket": "instagramassignmnet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917962287650:android:34b3df38aafc963720387b",
+        "android_client_info": {
+          "package_name": "com.instagramassignmnet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917962287650-ai8nnuoj4h7aigujk0ootq5rj96sk19i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instagramassignmnet",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "917962287650-utk4690m73u6ka5mucfrvjjcsr4hjlnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu9xXFxw8OQkoQsQ-rNRwtDGLAUi_BwDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917962287650-utk4690m73u6ka5mucfrvjjcsr4hjlnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
