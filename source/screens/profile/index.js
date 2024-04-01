@@ -1,23 +1,15 @@
 import { Button, Icon, Image } from '@rneui/themed';
 import { View } from 'react-native-ui-lib';
-import { base } from '../../assets/base';
 import { styles } from './style';
 import { Text, FlatList } from "react-native"
 import { Icons, IconsType } from '../../assets/icons';
 import { colors } from '../../assets/colors';
 import { Dimension } from '../../assets/dimension';
 import { CustomTab } from '../../components/customTab';
-import { useState } from 'react'
-import VideoPlayerModal from '../../components/VideoPlayModal';
 import { Images } from '../../assets/images';
 
 
-
-
 export const Profile = (props) => {
-    const [modal, setModal] = useState(false);
-    const [item, setVideoItems] = useState([]);
-
     let list2 = [
         {
             id: 1,
@@ -146,10 +138,11 @@ export const Profile = (props) => {
             type: 'image'
         },
 
-    ]
+    ];
+
 
     const handleVideoPlay = () => {
-        setVideoItems([{
+        let itemsArray = [{
             id: 11,
             name: 'Yuhal, YL',
             image: 'https://images.unsplash.com/photo-1525451545902-3f8f9620c6ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fHdhbGxwYXBlciUyMGhkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
@@ -158,10 +151,10 @@ export const Profile = (props) => {
             address: 'Tokyo, Japan',
             type: 'video',
             video: {
-                url: Images.video
+                url: Images.video4
             }
-        }])
-        setModal(true);
+        }]
+        props.navigation.navigate("videoPlayerScreen", { itemsList: itemsArray })
     };
 
 
@@ -262,8 +255,8 @@ export const Profile = (props) => {
                     contentContainerStyle={styles.flat}
                     data={list2}
                     numColumns={3}
-                    showsHorizontalScrollIndicator={false}
-                    // keyExtractor={(index, id) => (index, id)}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={(index, id) => (index, id)}
                     renderItem={({ item, index }) => (
                         <View style={styles.mainBody}>
                             <View style={styles.itemContainer2}>
@@ -287,19 +280,9 @@ export const Profile = (props) => {
                                     null
                             }
                         </View>
-                    )
-                    }
+                    )}
                 />
             </View>
-            {modal ? (
-                <VideoPlayerModal
-                    open={modal}
-                    item={item}
-                    close={() => setModal(false)}
-                    onNavigate={''}
-                />
-            ) : null}
         </View>
     )
-
-}
+};

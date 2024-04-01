@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../assets/colors";
 import { Font } from "../../assets/fontfamily";
-import { fp, hp, hzp, vp, wp } from "../../assets/fontsize";
+import { fp, hp, vp } from "../../assets/fontsize";
 
 
 export const styles = StyleSheet.create({
@@ -41,7 +41,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingVertical: hp(5),
     paddingHorizontal: hp(15),
-    // width: '%',
     borderRadius: 10,
   },
   icon: {
@@ -49,24 +48,11 @@ export const styles = StyleSheet.create({
     width: hp(50),
     alignItems: 'center',
     justifyContent: 'center',
-    // fontFamily: Font.regular,
-  },
-  notiFiDot: {
-    position: 'absolute',
-    zIndex: 9999,
-    bottom: hp(26),
-    right: hp(65)
-  },
-  dot: {
-    height: hp(10),
-    width: hp(10),
-    borderRadius: hp(5),
-    backgroundColor: colors.lightRed
   },
   conatainer: {
     height: '100%',
     width: '100%',
-    backgroundColor: colors.white
+    backgroundColor: colors.transparent
   },
   rowContainer: {
     // paddingHorizontal: hp(12)
@@ -158,20 +144,21 @@ export const styles = StyleSheet.create({
     fontFamily: Font.regular,
   },
   bodyMain: {
-    flex: 1
+    flex: 1,
+    marginTop: hp(5)
   },
   flat2: {
     flexGrow: 1,
-    paddingBottom : hp(90)
+    paddingBottom: hp(90)
   },
   itemContainer: {
     height: hp(650),
     width: '100%',
     backgroundColor: colors.white,
-    marginBottom: hp(20)
+    marginBottom: hp(10)
   },
   userContainer: {
-    paddingTop : hp(8),
+    paddingTop: hp(8),
     paddingBottom: hp(10),
     paddingHorizontal: hp(5),
     backgroundColor: colors.white,
@@ -212,8 +199,8 @@ export const styles = StyleSheet.create({
   },
   col3: {
     width: '25%',
-    alignItems: 'flex-end' ,
-    paddingRight : hp(3)
+    alignItems: 'flex-end',
+    paddingRight: hp(3)
   },
   icnMian: {
     marginTop: hp(3),
@@ -229,55 +216,54 @@ export const styles = StyleSheet.create({
     width: '100%',
     overflow: 'hidden'
   },
-  userBottmeIconsConatiner:{
-    paddingHorizontal : hp(30),
-    paddingVertical : hp(10),
-    flexDirection : 'row',
+  userBottmeIconsConatiner: {
+    paddingHorizontal: hp(30),
+    paddingVertical: hp(10),
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
   },
-  icons1:{
+  icons1: {
     width: '11%',
   },
-  userLikesRow:{
-    marginHorizontal : hp(14),
-    flexDirection  : 'row',
+  userLikesRow: {
+    marginHorizontal: hp(14),
+    flexDirection: 'row',
     alignItems: 'center'
   },
-  userLikesImage :{
+  userLikesImage: {
     height: hp(26),
     width: hp(26),
     borderRadius: hp(13),
     overflow: 'hidden',
   },
-  likesMian:{
-    marginHorizontal : hp(10)
+  likesMian: {
+    marginHorizontal: hp(10)
   },
-  likesBy : {
+  likesBy: {
     fontSize: fp(16),
     color: colors.black,
     fontFamily: Font.regular,
   },
-  likesBy2:{
+  likesBy2: {
     fontSize: fp(16),
     color: colors.black,
     fontFamily: Font.medium,
   },
-  about:{
-    flexDirection : 'row',
-    marginHorizontal : hp(12),
+  about: {
+    flexDirection: 'row',
+    marginHorizontal: hp(12),
     alignItems: 'center',
-    marginVertical : hp(3)
+    marginVertical: hp(3)
   },
-  aboutText:{
+  aboutText: {
     fontSize: fp(16),
     color: colors.black,
     fontFamily: Font.medium,
   },
-  aboutText2:{
+  aboutText2: {
     fontSize: fp(16),
     color: colors.black,
     fontFamily: Font.regular,
   }
-
 })

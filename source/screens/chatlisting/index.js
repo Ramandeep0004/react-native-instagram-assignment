@@ -1,20 +1,14 @@
 
-import { Button, Icon, Image, Input } from '@rneui/themed';
-import React, { useState } from 'react';
-import { View, Text, FlatList, SectionList } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { Icon, Image, Input } from '@rneui/themed';
+import { View, Text, FlatList } from 'react-native';
 import { base } from '../../assets/base';
 import { colors } from '../../assets/colors';
 import { Dimension } from '../../assets/dimension';
-import { hp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { styles } from './style';
 
 
-
-
 const Chat = () => {
-
 
     let list2 = [
         {
@@ -89,8 +83,7 @@ const Chat = () => {
             id: 9,
             comment: 'Yoooooooooooo',
         },
-    ]
-
+    ];
 
     return (
         <View style={styles.conatainer}>

@@ -1,9 +1,9 @@
 
 import { Button } from '@rneui/themed';
-import React, { useEffect, useRef, useState } from 'react';
-import { View, TouchableOpacity, Text, TextInput } from 'react-native';
-import { hp, hzp, vp, wp } from '../../assets/fontsize';
+import React, { useState } from 'react';
+import { View, Text, TextInput, StatusBar } from 'react-native';
 import axios from "axios";
+import { styles } from './style';
 
 
 const LiveStreaming = (props) => {
@@ -16,8 +16,6 @@ const LiveStreaming = (props) => {
 
 
     const handleStream = async () => {
-        console.log('---------------------------------->>>>>>>>>>>>>>>>>>>>');
-
         var postData = {
             "playback_policy": [
                 "public"
@@ -46,38 +44,18 @@ const LiveStreaming = (props) => {
     };
 
 
-
-
     return (
-        <View
-            style={{
-                flex: 1,
-                flexDirection: "column",
-                padding: 24,
-                backgroundColor: "orange",
-                justifyContent: "center",
-            }}
-        >
-            <Text
-                style={{
-                    color: "#fff",
-                    fontSize: 25,
-                    marginBottom: 150,
-                }}
-            >
+        <View style={styles.constainer} >
+            <StatusBar
+                backgroundColor={"transparent"}
+            />
+            <Text style={styles.textStyle} >
                 {"React Native\nLive Stream Video example"}
             </Text>
-            <Text style={{ color: "#fff", fontSize: 18 }}>
+            <Text style={styles.textStyle1}>
                 Please enter a stream name.
             </Text>
-            <View
-                style={{
-                    borderWidth: 1,
-                    borderColor: "blue",
-                    marginTop: 20,
-                    marginBottom: 100,
-                }}
-            >
+            <View style={styles.textInput}>
                 <TextInput
                     style={{ color: "#fff", height: 40 }}
                     placeholder="Write stream name here"
@@ -86,12 +64,7 @@ const LiveStreaming = (props) => {
                     onChangeText={(stream) => setStream(stream)}
                 />
             </View>
-            <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                }}
-            >
+            <View style={styles.buttonMain} >
                 <Button
                     onPress={() =>
                         props.navigation.navigate("liveUserScreen", {
@@ -100,29 +73,11 @@ const LiveStreaming = (props) => {
                         })
                     }
                     title="Join Stream"
-                    buttonStyle={{
-                        borderRadius: wp(5),
-                        paddingVertical: vp(18),
-                        paddingHorizontal: hzp(18),
-                        backgroundColor: '#3797EF',
-                    }}
-                    containerStyle={{
-                        width: hp(150),
-                        borderRadius: wp(10),
-                        marginHorizontal: hp(15),
-                        shadowRadius: 5,
-                        // borderRadius: 12,
-                        // height: hp(60),
-                        elevation: 5,
-                        shadowOpacity: 0.5,
-                        shadowColor: '#000',
-                        justifyContent: 'center',
-                        shadowOffset: { width: 0, height: 5 },
-                    }}
+                    buttonStyle={styles.buttonStyle}
+                    containerStyle={styles.buttoncontainerStyle}
                 />
                 <Button
                     onPress={() =>
-
                         handleStream()
                         // props.navigation.navigate("streamContent", {
                         //     pushserver: pushserver,
@@ -130,25 +85,8 @@ const LiveStreaming = (props) => {
                         // })
                     }
                     title="Stream a Video"
-                    buttonStyle={{
-                        borderRadius: wp(5),
-                        paddingVertical: vp(18),
-                        paddingHorizontal: hzp(18),
-                        backgroundColor: '#3797EF',
-                    }}
-                    containerStyle={{
-                        width: hp(150),
-                        borderRadius: wp(10),
-                        marginHorizontal: hp(15),
-                        shadowRadius: 5,
-                        // borderRadius: 12,
-                        // height: hp(60),
-                        elevation: 5,
-                        shadowOpacity: 0.5,
-                        shadowColor: '#000',
-                        justifyContent: 'center',
-                        shadowOffset: { width: 0, height: 5 },
-                    }}
+                    buttonStyle={styles.buttonStyle2}
+                    containerStyle={styles.buttonContainerStyle}
                 />
             </View>
         </View>

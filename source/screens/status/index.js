@@ -1,17 +1,14 @@
-import { Header, Icon, Image, Input, LinearProgress } from '@rneui/themed';
-import { FlatList, TouchableOpacity, ProgressBarAndroid } from 'react-native';
+import { Icon, Image, Input, LinearProgress } from '@rneui/themed';
+import { FlatList } from 'react-native';
 import { View } from 'react-native-ui-lib';
 import { colors } from '../../assets/colors';
 import { Dimension } from '../../assets/dimension';
 import { hp, vp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { styles } from './style';
-import { useState } from 'react'
-import VideoPlayerModal from '../../components/VideoPlayModal';
 
 
-export const Status = (props) => {
-    const [modal, setModal] = useState(false);
+export const Status = () => {
 
     let list2 = [
         {
@@ -23,7 +20,7 @@ export const Status = (props) => {
             address: 'Tokyo, Japan',
             type: 'imege'
         },
-    ]
+    ];
 
 
     return (
@@ -34,8 +31,8 @@ export const Status = (props) => {
                     data={list2}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    // keyExtractor={(index, id) => (index, id)}
-                    renderItem={({ item, index }) => (
+                    keyExtractor={(index, id) => (index, id)}
+                    renderItem={({ item }) => (
                         <View style={styles.mainBody}>
                             <View style={styles.ImageMain}>
                                 <Image
@@ -52,8 +49,7 @@ export const Status = (props) => {
                                 />
                             </View>
                         </View>
-                    )
-                    }
+                    )}
                 />
                 <View style={styles.rowMian}>
                     <View style={styles.search}>
@@ -91,13 +87,6 @@ export const Status = (props) => {
                     </View>
                 </View>
             </View>
-            {modal ? (
-                <VideoPlayerModal
-                    open={modal}
-                    close={() => setModal(false)}
-                    onNavigate={''}
-                />
-            ) : null}
         </View>
     )
-}
+};

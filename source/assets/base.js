@@ -1,11 +1,9 @@
 import { StyleSheet } from "react-native";
-import { colors } from "./colors";
-// import { Font } from "./fontfamily";
-import { fp, hzp, vp } from "./fontsize";
+import { hzp } from "./fontsize";
+
 
 export const base = StyleSheet.create({
     container: {
-       
         paddingHorizontal: 20,
     },
     row: {
@@ -30,13 +28,10 @@ export const base = StyleSheet.create({
         paddingHorizontal: hzp(4),
     },
     col4: {
-       
         width: '33.33333333%',
         paddingHorizontal: hzp(4),
-
     },
     col5: {
-      
         width: '41.66666667%',
         paddingHorizontal: hzp(4),
     },
@@ -67,25 +62,5 @@ export const base = StyleSheet.create({
     col12: {
         width: '100%',
         paddingHorizontal: hzp(4),
-
-
     },
-    // Button: {
-    //     type: 'solid',
-    //     titleStyle: {
-    //         color: colors.green,
-    //         fontSize: fp(20),
-    //         fontFamily: Font.regular,
-    //         borderRadius: 20,
-    //     },
-    //     buttonStyle: {
-    //         paddingVertical: vp(73),
-    //         borderRadius: fp(15),
-    //     },
-    // },
-    // // Statusbar 
-    // statusbar: {
-    //     backgroundColor: colors.Secondary,
-    // },
-
 });

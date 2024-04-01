@@ -7,14 +7,10 @@ import { hp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { styles } from './style';
 import { useState } from 'react'
-import VideoPlayerModal from '../../components/VideoPlayModal';
 import { Images } from '../../assets/images';
 
 
 export const AllPosts = (props) => {
-    const [modal, setModal] = useState(false);
-    const [item, setVideoItems] = useState(null);
-
     let list2 = [
         {
             id: 1,
@@ -192,9 +188,8 @@ export const AllPosts = (props) => {
 
     const handleVideoPlayer = (item) => {
         let array = [...list2]
-        let videoIds = array.filter((data) => data.type === 'video' && data.id >= item.id ) 
-        setVideoItems(videoIds),
-        setModal(true);
+        let filterData = array.filter((data) => data.type === 'video' && data.id >= item.id)
+        props.navigation.navigate("videoPlayerScreen", { itemsList: filterData })
     };
 
     return (
@@ -205,7 +200,7 @@ export const AllPosts = (props) => {
                     data={list2}
                     numColumns={3}
                     showsHorizontalScrollIndicator={false}
-                    // keyExtractor={(index, id) => (index, id)}
+                    keyExtractor={(index, id) => (index, id)}
                     renderItem={({ item, index }) => (
                         <View style={styles.mainBody}>
                             <View style={styles.itemContainer2}>
@@ -245,14 +240,6 @@ export const AllPosts = (props) => {
                     }
                 />
             </View>
-            {modal ? (
-                <VideoPlayerModal
-                    open={modal}
-                    item={item}
-                    close={() => setModal(false)}
-                    navigation={props.navigation}
-                />
-            ) : null}
         </View>
     )
 }

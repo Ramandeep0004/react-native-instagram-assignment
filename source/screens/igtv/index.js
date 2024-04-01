@@ -1,4 +1,4 @@
-import { Header, Icon, Image, Input } from '@rneui/themed';
+import { Icon, Image } from '@rneui/themed';
 import { FlatList, TouchableOpacity, Text, StatusBar } from 'react-native';
 import { View } from 'react-native-ui-lib';
 import { colors } from '../../assets/colors';
@@ -6,14 +6,10 @@ import { Dimension } from '../../assets/dimension';
 import { hp, vp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { styles } from './style';
-import { useState } from 'react'
-import VideoPlayerModal from '../../components/VideoPlayModal';
 import { Images } from '../../assets/images';
 
 
 export const IGTV = (props) => {
-    const [modal, setModal] = useState(false);
-    const [item, setVideoItems] = useState([]);
 
     let list2 = [
         {
@@ -66,10 +62,11 @@ export const IGTV = (props) => {
             address: 'Tokyo, Japan',
             duraton: '43.30',
         },
-    ]
+    ];
+
 
     const handleVideoPlay = () => {
-        setVideoItems([{
+        let itemsArray = [{
             id: 11,
             name: 'Yuhal, YL',
             image: 'https://images.unsplash.com/photo-1525451545902-3f8f9620c6ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fHdhbGxwYXBlciUyMGhkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
@@ -80,13 +77,18 @@ export const IGTV = (props) => {
             video: {
                 url: Images.video4
             }
-        }])
-        setModal(true);
+        }]
+        props.navigation.navigate("videoPlayerScreen", { itemsList: itemsArray })
     };
+
 
     return (
         <>
-            <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'} />
+            <StatusBar
+                translucent
+                backgroundColor='transparent'
+                barStyle={'light-content'}
+            />
             <View style={styles.conatainer}>
                 <View style={styles.body}>
                     <View style={styles.ImageMain}>
@@ -101,9 +103,9 @@ export const IGTV = (props) => {
                         numColumns={2}
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
-                        // keyExtractor={(index, id) => (index, id)}
+                        keyExtractor={(index, id) => (index, id)}
                         renderItem={({ item, index }) => (
-                            <TouchableOpacity onPress={() => setModal(true)}>
+                            <TouchableOpacity onPress={() => handleVideoPlay()}>
                                 <View style={styles.mainBody}>
                                     <TouchableOpacity onPress={() => handleVideoPlay()}>
                                         <View style={styles.itemImage}>
@@ -160,15 +162,7 @@ export const IGTV = (props) => {
                         </View>
                     </View>
                 </View>
-                {modal ? (
-                    <VideoPlayerModal
-                        open={modal}
-                        item={item}
-                        close={() => setModal(false)}
-                        onNavigate={''}
-                    />
-                ) : null}
             </View>
         </>
     )
-}
+};

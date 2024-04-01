@@ -3,15 +3,12 @@ import { Button, Icon, Image } from '@rneui/themed';
 import React, { useState } from 'react';
 import { View, Text, FlatList, SectionList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { base } from '../../assets/base';
 import { colors } from '../../assets/colors';
 import { Dimension } from '../../assets/dimension';
 import { hp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { CustomTab } from '../../components/customTab';
 import { styles } from './style';
-
-
 
 
 const LikesScreen = () => {
@@ -355,13 +352,12 @@ const LikesScreen = () => {
                             <View style={styles.followeRequests}>
                                 <Text style={styles.text2}>Follow Requests</Text>
                             </View>
-
                             <SectionList
                                 sections={list}
                                 style={styles.sectionList}
                                 contentContainerStyle={{
                                     flexGrow: 1,
-                                    paddingBottom: hp(190)
+                                    paddingBottom: hp(210)
                                 }}
                                 keyExtractor={(item) => item.id}
                                 showsVerticalScrollIndicator={false}

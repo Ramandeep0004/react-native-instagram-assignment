@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     },
     flat: {
         flexGrow: 1,
-        paddingBottom : hp(90)
+        paddingBottom : hp(100)
     },
     sectionList: {
         flexGrow: 1,

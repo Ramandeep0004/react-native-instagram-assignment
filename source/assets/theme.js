@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import { createTheme } from '@rneui/themed';
 import { colors } from './colors';
 import { fp, hp, hzp, vp, wp } from './fontsize';
@@ -7,7 +6,6 @@ import { Font } from './fontfamily';
 
 export const Theme = createTheme({
     components: {
-
         Button: {
             type: 'solid',
             titleStyle: {
@@ -23,14 +21,11 @@ export const Theme = createTheme({
                 paddingVertical: vp(18),
                 paddingHorizontal: hzp(18),
                 backgroundColor: '#3797EF',
-                // width:'100%',
             },
             containerStyle: {
                 borderRadius: wp(10),
                 marginHorizontal:hp(15),
                 shadowRadius: 5,
-                // borderRadius: 12,
-                // height: hp(60),
                 elevation: 5,
                 shadowOpacity: 0.5,
                 shadowColor: '#000',
@@ -55,20 +50,9 @@ export const Theme = createTheme({
                 fontFamily: Font.bold,
                 fontSize: hp('2%'),
             },
-
-            // color: colors.black,
-            // fontSize: hp('1.9%'),
-            // fontFamily: Font.regular,
         },
         Input: {
-            // paddingTop: 0,
-            // paddingBottom: 0,
-            // paddingLeft: wp(6),
-            // paddingRight: 0,
             paddingVertical: 0,
-            // paddingHorizontal: 0,
-            // marginVertical: 0,
-            // marginHorizontal: 8,
             labelStyle: {
                 color: colors.black,
                 fontFamily: Font.bold,
@@ -86,7 +70,6 @@ export const Theme = createTheme({
                 marginBottom: 0,
                 marginLeft: 0,
                 marginRight: 0,
-
                 margin: 0,
                 marginHorizontal: 0
             },
@@ -95,13 +78,11 @@ export const Theme = createTheme({
                 borderWidth: 1,
                 height: hp(58),
                 shadowRadius: 3.84,
-                // fontSize: fp(18),
                 paddingHorizontal : hp(10),
                 shadowOpacity: 0.5,
                 shadowColor: colors.textColor3,
                 borderColor: '#eaeaea',
                 borderRadius: hp(12),
-                // fontFamily: Font.regular,
                 backgroundColor: colors.white,
                 shadowOffset: { width: 0, height: 5 },
                 marginVertical: hp(-2),

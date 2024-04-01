@@ -15,4 +15,4 @@ export const Images = {
     video2: require('../../assets/images/nature.mp4'),
     video3: require('../../assets/images/downSun.mp4'),
     video4: require('../../assets/images/rollerVideo.mp4')
-}
+};

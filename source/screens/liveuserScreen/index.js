@@ -15,7 +15,6 @@ const LiveUserStream = (props) => {
   }, []);
 
 
-  console.log(playerRef, '.................................playerRef user view screeen ');
   return (
     <View style={{ flex: 1 }}>
       <NodePlayerView
@@ -29,10 +28,9 @@ const LiveUserStream = (props) => {
         maxBufferTime={1000}
         autoplay={true}
         onStatus={(code, msg) => {
-          console.log("onStatus------> " + code + " msg=------> " + msg,  '-----------------------------> at user live view screen');
+          console.log("onStatus------> " + code + " msg=------> " + msg, '-----------------------------> at user live view screen');
         }}
       />
-
       <Button
         onPress={() => {
           props.navigation.goBack();

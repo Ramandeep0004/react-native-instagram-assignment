@@ -3,16 +3,10 @@ import { View } from 'react-native-ui-lib';
 import { base } from '../../assets/base';
 import { styles } from './style';
 import { Text, FlatList } from "react-native"
-import { Icons, IconsType } from '../../assets/icons';
 import { colors } from '../../assets/colors';
-import { Dimension } from '../../assets/dimension';
-import { CustomTab } from '../../components/customTab';
 
 
-
-
-export const EditProfile = (props: any) => {
-
+export const EditProfile = (props) => {
 
     return (
         <View style={styles.container}>

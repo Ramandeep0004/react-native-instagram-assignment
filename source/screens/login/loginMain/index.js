@@ -1,19 +1,14 @@
-import { Button, Icon, Image, Input, Slider } from '@rneui/themed';
-import { Text, FlatList, ImageBackground, TouchableOpacity, StatusBar, Platform } from 'react-native';
+import { Button, Icon, Input } from '@rneui/themed';
+import { Text, StatusBar, Platform } from 'react-native';
 import { View } from 'react-native-ui-lib';
 import { base } from '../../../assets/base';
 import { colors } from '../../../assets/colors';
 import { Dimension } from '../../../assets/dimension';
-import { hp } from '../../../assets/fontsize';
 import { Icons, IconsType } from '../../../assets/icons';
 import { styles } from './style';
 
 
-
-
-export const LoginScreen = (props: any) => {
-
-
+export const LoginScreen = (props) => {
     return (
         <View>
             <StatusBar
@@ -73,5 +68,4 @@ export const LoginScreen = (props: any) => {
             </View>
         </View>
     )
-
-}
+};

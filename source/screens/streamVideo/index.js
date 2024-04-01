@@ -4,7 +4,6 @@ import { View, Button, StyleSheet } from "react-native";
 import { NodeCameraView } from "react-native-nodemediaclient";
 
 
-
 const StreamContent = (props) => {
   const [playerRef, setPlayerRef] = useState(null);
 
@@ -15,7 +14,6 @@ const StreamContent = (props) => {
   }, []);
 
 
-  console.log(playerRef, '..................................liveStreaming ref');
   return (
     <View style={{ flex: 1, backgroundColor: "#333" }}>
       <NodeCameraView

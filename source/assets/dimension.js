@@ -23,13 +23,4 @@ export const Dimension = {
     small: hp(12),
     medium: hp(16),
     Medium: hp(18),
-
-    start: {
-        x: 0,
-        y: 0,
-    },
-    end: {
-        x: 1,
-        y: 0,
-    },
 };

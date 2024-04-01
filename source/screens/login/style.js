@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: hp(170),
         width: hp(150),
-        // backgroundColor  : colors.secondPrimary
     },
     imageContainer: {
         marginVertical: hp(15),
@@ -93,6 +92,5 @@ export const styles = StyleSheet.create({
         paddingVertical: hp(16),
         paddingHorizontal: hzp(18),
         backgroundColor: '#3797EF',
-        // width:'100%',
     },
 })

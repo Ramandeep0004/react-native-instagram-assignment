@@ -1,14 +1,9 @@
-import { Button, Icon, Image, Input, Slider } from '@rneui/themed';
-import { Text, FlatList, ImageBackground, TouchableOpacity } from 'react-native';
-import { View } from 'react-native-ui-lib';
+import { Button, Image } from '@rneui/themed';
+import { Text, View } from 'react-native';
 import { styles } from './style';
 
 
-
-
-export const LoginMain = (props: any) => {
-
-
+export const LoginMain = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.body}>
@@ -43,5 +38,4 @@ export const LoginMain = (props: any) => {
             </View>
         </View>
     )
-
-}
+};

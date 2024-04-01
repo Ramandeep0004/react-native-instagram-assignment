@@ -1,16 +1,13 @@
-
-
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@rneui/themed';
 import React from 'react';
 import { Platform, StatusBar } from 'react-native';
-import { colors } from './source/assets/colors';
 import { Theme } from './source/assets/theme';
 import { StackScreens } from './source/navigations/stack';
+import { colors } from './source/assets/colors';
 
 
-function App(): JSX.Element {
-
+function App() {
 
   return (
     <ThemeProvider theme={Theme}>
@@ -18,13 +15,12 @@ function App(): JSX.Element {
         <StatusBar
           translucent={true}
           backgroundColor={colors.white}
-          barStyle={Platform.OS === 'ios' ? 'default' : 'dark-content'}
+          barStyle={Platform.OS === 'ios' ? 'default' : "light-content"}
         />
         <StackScreens />
       </NavigationContainer>
     </ThemeProvider>
   );
 }
-
 
 export default App;

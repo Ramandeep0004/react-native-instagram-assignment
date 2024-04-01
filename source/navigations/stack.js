@@ -1,41 +1,21 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LoginMain } from "../screens/login";
 import { LoginScreen } from "../screens/login/loginMain";
-import TrackingOrder from "../screens/likes";
-import { Tabs } from "./bottomsTabs";
-import { HeaderComponet } from "./header/Header";
 import { EditProfile } from "../screens/editprofile";
-import MyDrawer from "./drawerNavigator";
 import { Status } from "../screens/status";
 import { IGTV } from "../screens/igtv";
 import Chat from "../screens/chatlisting";
 import LiveStreaming from "../screens/livestreaming";
 import LiveUserScreen from "../screens/liveuserScreen";
 import StreamContent from "../screens/streamVideo";
+import VideoPlayerScreen from "../screens/playVideo";
+import { HeaderComponet } from "../components/header";
+import { Tabs } from "./bottomTabs";
 
 
+let Stack = createNativeStackNavigator()
 
-export type RootStackParamList = {
-  profileDetail: undefined
-  bottomContainer: undefined
-  TrackingOrders: undefined
-  Login: undefined
-  LoginScreen: undefined
-  EditProfile: undefined
-  drawer: undefined
-  status: undefined
-  IGTV: undefined
-  chat: undefined
-  liveStreaming: undefined
-  liveUserScreen: undefined
-  streamContent: undefined
-}
-
-let Stack = createNativeStackNavigator<RootStackParamList>()
-
-
-export const StackScreens = (props: any) => {
-
+export const StackScreens = () => {
   return (
     <Stack.Navigator
       initialRouteName="Login"
@@ -114,6 +94,13 @@ export const StackScreens = (props: any) => {
         }}
       />
       <Stack.Screen
+        name="videoPlayerScreen"
+        component={VideoPlayerScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
         name="chat"
         component={Chat}
         options={{
@@ -131,4 +118,4 @@ export const StackScreens = (props: any) => {
       />
     </Stack.Navigator>
   )
-}
+};

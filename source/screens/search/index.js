@@ -1,16 +1,14 @@
-import { Header, Icon, Image, Input } from '@rneui/themed';
-import { Text, TouchableOpacity, ImageBackground, FlatList, StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { Icon, Image, Input } from '@rneui/themed';
+import { Text, FlatList } from 'react-native';
 import { View } from 'react-native-ui-lib';
-import { base } from '../../assets/base';
 import { colors } from '../../assets/colors';
 import { Dimension } from '../../assets/dimension';
-import { hp } from '../../assets/fontsize';
 import { Icons, IconsType } from '../../assets/icons';
 import { styles } from './style';
+import { hp } from '../../assets/fontsize';
 
 
-export const Search = (props) => {
+export const Search = () => {
 
     let list = [
         {
@@ -135,7 +133,7 @@ export const Search = (props) => {
             address: 'Tokyo, Japan'
         },
         {
-            id:12,
+            id: 12,
             name: 'Yuhal, YL',
             image: 'https://images.unsplash.com/photo-1526094114998-bbde692632d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjM0fHxwcm9maWxlJTIwcGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
             properities: '1500 Properities',
@@ -151,7 +149,7 @@ export const Search = (props) => {
             address: 'Tokyo, Japan'
         },
         {
-            id:14,
+            id: 14,
             name: 'Yuhal, YL',
             image: 'https://images.unsplash.com/photo-1653379671837-224a212bf5f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzAzfHxwcm9maWxlJTIwcGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
             properities: '1500 Properities',
@@ -167,7 +165,7 @@ export const Search = (props) => {
             address: 'Tokyo, Japan'
         },
         {
-            id:16,
+            id: 16,
             name: 'Yuhal, YL',
             image: 'https://images.unsplash.com/photo-1653379671837-224a212bf5f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzAzfHxwcm9maWxlJTIwcGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
             properities: '1500 Properities',
@@ -212,7 +210,7 @@ export const Search = (props) => {
                         data={list}
                         horizontal
                         showsHorizontalScrollIndicator={false}
-                        // keyExtractor={(id) => id}
+                        keyExtractor={(index, id) => (index, id)}
                         renderItem={({ item }) => (
                             <View style={styles.serachTags}>
                                 <View style={styles.tagsRow}>
@@ -236,45 +234,46 @@ export const Search = (props) => {
                         }
                     />
                 </View>
-
-                    <FlatList
-                        contentContainerStyle={styles.flat}
-                        data={list2}
-                        numColumns={3}
-                        showsHorizontalScrollIndicator={false}
-                        keyExtractor={(index, id) => ( index, id)}
-                        renderItem={({ item, index }) => (
-                            <View style={styles.mainBody}>
-                                {
-                                    index === 1 ?
-                                        <View style={styles.itemContainer3}>
-                                            <Image
-                                                source={{ uri: item.image }}
-                                                style={styles.image}
-                                            />
-                                        </View>
-                                        :
-                                        index === 2 ?
-                                            <View style={styles.absulateImage}>
-                                                <View style={styles.itemContainer2}>
-                                                    <Image
-                                                        source={{ uri: item.image }}
-                                                        style={styles.image}
-                                                    />
-                                                </View>
-                                            </View>
-                                            :
+                <FlatList
+                    style={styles.flatList}
+                    contentContainerStyle={{ paddingBottom: hp(120) }}
+                    data={list2}
+                    numColumns={3}
+                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false }
+                    keyExtractor={(index, id) => (index, id)}
+                    renderItem={({ item, index }) => (
+                        <View style={styles.mainBody}>
+                            {
+                                index === 1 ?
+                                    <View style={styles.itemContainer3}>
+                                        <Image
+                                            source={{ uri: item.image }}
+                                            style={styles.image}
+                                        />
+                                    </View>
+                                    :
+                                    index === 2 ?
+                                        <View style={styles.absulateImage}>
                                             <View style={styles.itemContainer2}>
                                                 <Image
                                                     source={{ uri: item.image }}
                                                     style={styles.image}
                                                 />
                                             </View>
-                                }
-                            </View>
-                        )
-                        }
-                    />
+                                        </View>
+                                        :
+                                        <View style={styles.itemContainer2}>
+                                            <Image
+                                                source={{ uri: item.image }}
+                                                style={styles.image}
+                                            />
+                                        </View>
+                            }
+                        </View>
+                    )
+                    }
+                />
             </View>
         </View>
     )

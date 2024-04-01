@@ -53,10 +53,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
   },
+  flatList :  {
+    flexGrow: 1,
+    marginTop: hp(10),
+  },
   flat: {
     flexGrow: 1,
-    // marginBottom : hp(90)
-    marginTop: hp(8)
+    marginTop: hp(10)
   },
   tagsRow: {
     flexDirection: 'row',

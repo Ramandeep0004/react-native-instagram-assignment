@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { colors } from "../../../assets/colors";
 import { Font } from "../../../assets/fontfamily";
-import { fp, hp, hzp, vp, wp } from "../../../assets/fontsize";
+import { fp, hp, hzp, wp } from "../../../assets/fontsize";
 
 
 export const styles = StyleSheet.create({
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
         color: colors.black,
     },
     forgetPasword: {
-        flexDirection : 'row',
+        flexDirection: 'row',
         marginBottom: hp(20),
     },
     forgetPass: {
@@ -58,17 +58,17 @@ export const styles = StyleSheet.create({
         width: '100%',
     },
     switchAccount: {
-        flexDirection : 'row',
+        flexDirection: 'row',
         marginVertical: hp(35)
     },
     switchACC: {
-        marginLeft : hp(10),
+        marginLeft: hp(10),
         fontFamily: Font.medium,
         fontSize: fp(18),
         color: colors.sky,
     },
     accountMian: {
-        marginVertical : hp(20)
+        marginVertical: hp(20)
     },
     account: {
         fontFamily: Font.regular,
@@ -80,28 +80,28 @@ export const styles = StyleSheet.create({
         fontSize: fp(18),
         color: colors.sky,
     },
-    icnMian :{
-        height : hp(25),
-        width : hp(25),
-        justifyContent : 'center',
-        alignItems : 'center',
-        backgroundColor : colors.sky
+    icnMian: {
+        height: hp(25),
+        width: hp(25),
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.sky
     },
-    OrMain:{
-        marginVertical : hp(15)
+    OrMain: {
+        marginVertical: hp(15)
     },
-    Or:{
+    Or: {
         fontFamily: Font.regular,
         fontSize: fp(17),
         color: colors.textColor3,
     },
-    bottomTag:{
-        bottom : 10,
-        position : 'absolute',
-        right : hp(110),
-        left : hp(140)
+    bottomTag: {
+        bottom: 10,
+        position: 'absolute',
+        right: hp(110),
+        left: hp(140)
     },
-    bottomTagtext:{
+    bottomTagtext: {
         fontFamily: Font.light,
         fontSize: fp(15),
         color: colors.textColor2,
@@ -111,6 +111,5 @@ export const styles = StyleSheet.create({
         paddingVertical: hp(16),
         paddingHorizontal: hzp(18),
         backgroundColor: '#3797EF',
-        // width:'100%',
     },
 })
